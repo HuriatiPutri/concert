@@ -73,6 +73,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Popular" />
+    <ProgressBar
+        android:id="@+id/pg2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/vp_popular"
         android:layout_width="match_parent"
@@ -85,6 +89,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bulan Ini" />
+    <ProgressBar
+        android:id="@+id/pg1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/vp_bulan"
         android:layout_width="match_parent"
@@ -96,6 +104,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mendatang" />
+    <ProgressBar
+        android:id="@+id/pg3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/vp_mendatang"
         android:layout_marginBottom="75dp"

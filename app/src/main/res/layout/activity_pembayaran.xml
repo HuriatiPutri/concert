@@ -5,6 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.transaksi.PembayaranActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:minHeight="?attr/actionBarSize">
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:minHeight="?attr/actionBarSize"
+                app:theme="@style/AppTheme">
+                <ImageView
+                    android:id="@+id/back"
+                    android:onClick="back"
+                    android:src="@drawable/ic_chevron_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textColor="@color/colorBlack"
+                    android:textAlignment="center"
+                    android:text="Pembayaran"
+                    android:layout_marginRight="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
 <LinearLayout
     android:orientation="vertical"
     android:padding="16dp"
@@ -17,12 +49,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
+            android:id="@+id/imgEvent"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/medium"
             android:scaleType="centerCrop"
             android:layout_width="250dp"
             android:layout_height="100dp" />
         <TextView
+            android:id="@+id/txtTitle"
             android:textStyle="bold"
             android:layout_marginTop="5dp"
             android:textColor="@color/colorBlack"
@@ -60,6 +94,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
+                android:id="@+id/tiket1"
                 android:paddingLeft="10dp"
                 android:textColor="@color/colorBlack"
                 android:text="2 Tiket Early Bid"
@@ -67,6 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
+                android:id="@+id/marchandise"
                 android:paddingLeft="10dp"
                 android:textSize="11dp"
                 android:layout_alignParentRight="true"
@@ -149,9 +185,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         <LinearLayout
+            android:id="@+id/rv1"
             android:background="@drawable/bg_edt_send"
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content">
             <RadioButton
                 android:layout_marginLeft="10dp"
@@ -167,10 +204,11 @@
                 android:layout_height="wrap_content" />
         </LinearLayout>
         <LinearLayout
-            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/rv1"
             android:background="@drawable/bg_edt_send"
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content">
             <RadioButton
                 android:layout_marginLeft="10dp"
@@ -232,12 +270,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
             <android.support.v7.widget.SwitchCompat
-                android:background="@color/colorGreen"
+                android:outlineAmbientShadowColor="@color/colorGreen"
                 android:layout_alignParentRight="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </RelativeLayout>
         <TextView
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="21dp"
             android:textSize="10sp"
             android:text="menggunakan fitur ini dikenakan biaya"
@@ -254,11 +293,12 @@
     </LinearLayout>
 
     <TextView
+        android:layout_marginTop="20dp"
         android:text="Rincian Harga"
-        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <LinearLayout
+        android:layout_marginTop="10dp"
         android:padding="10dp"
         android:orientation="vertical"
         android:background="@drawable/bg_edt_send"
@@ -372,4 +412,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>
+    </LinearLayout>
 </ScrollView>

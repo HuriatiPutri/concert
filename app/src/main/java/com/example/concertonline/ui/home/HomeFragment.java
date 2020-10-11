@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.concertonline.R;
@@ -36,6 +37,7 @@ import retrofit2.Response;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel mViewModel;
+    ProgressBar pg1, pg2, pg3;
     BaseApiService baseApiService;
 
     public static HomeFragment newInstance() {
@@ -51,6 +53,10 @@ public class HomeFragment extends Fragment {
         rc_popular = v.findViewById(R.id.vp_popular);
         rc_bulanini = v.findViewById(R.id.vp_bulan);
         rc_mendatang = v.findViewById(R.id.vp_mendatang);
+
+        pg1 = v.findViewById(R.id.pg1);
+        pg2 = v.findViewById(R.id.pg2);
+        pg3 = v.findViewById(R.id.pg3);
 
        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
        rc_popular.setLayoutManager(linearLayoutManager);
@@ -69,7 +75,12 @@ public class HomeFragment extends Fragment {
         baseApiService.HomeRequest().enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
                 if(response.isSuccessful()){
+
+                    pg1.setVisibility(View.GONE);
+                    pg2.setVisibility(View.GONE);
+                    pg3.setVisibility(View.GONE);
 //                    Toast.makeText(getContext(), "berhasil" + response.code(), Toast.LENGTH_SHORT).show();
                     try {
                         JSONObject jsonObject = new JSONObject(response.body().string());

@@ -23,6 +23,8 @@ public class BuyActivity extends AppCompatActivity {
     int tiket2 = 0;
     int totTiket = 0;
     int marchandise = 0;
+
+    String img,title,desc,time,date;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +45,11 @@ public class BuyActivity extends AppCompatActivity {
         price2 = findViewById(R.id.normal_price);
         price3 = findViewById(R.id.price3);
 
-        String img = getIntent().getStringExtra("img");
-        String title = getIntent().getStringExtra("title");
-        String desc = getIntent().getStringExtra("desc");
-        String time = getIntent().getStringExtra("time");
-        String date = getIntent().getStringExtra("date");
+        img = getIntent().getStringExtra("img");
+        title = getIntent().getStringExtra("title");
+        desc = getIntent().getStringExtra("desc");
+        time = getIntent().getStringExtra("time");
+        date = getIntent().getStringExtra("date");
 
         txtTiket.setText("Rp. 0");
         txtMnchds.setText("Rp. 0");
@@ -68,7 +70,13 @@ public class BuyActivity extends AppCompatActivity {
     }
 
     public void pembayaran(View view) {
-        startActivity(new Intent(this, PembayaranActivity.class));
+        startActivity(new Intent(this, PembayaranActivity.class)
+                .putExtra("img",img)
+                .putExtra("title",title)
+                .putExtra("desc",desc)
+                .putExtra("time",time)
+                .putExtra("date",date)
+        );
     }
 
     public void minus1(View view) {
