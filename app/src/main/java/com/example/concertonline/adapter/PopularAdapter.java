@@ -1,0 +1,84 @@
+package com.example.concertonline.adapter;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.example.concertonline.model.Popular;
+import com.example.concertonline.R;
+import com.example.concertonline.api.BaseApiService;
+import com.example.concertonline.ui.transaksi.BuyActivity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.UsersHolder> {
+
+    BaseApiService mApiService;
+    private Context context;
+    private List<Popular> list;
+
+    public PopularAdapter(Context context, List<Popular> list) {
+        this.context = context;
+        this.list = list;
+    }
+
+    @NonNull
+    @Override
+    public UsersHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemRow = LayoutInflater.from(parent.getContext()).inflate(R.layout.popular_item_layout, parent, false);
+        return new UsersHolder(itemRow);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull final UsersHolder holder, final int position) {
+        holder.txtTitle.setText(list.get(position).getJudul());
+        holder.txtDate.setText(list.get(position).getTanggal());
+        holder.txtPrice.setText("Rp. "+list.get(position).getMulai_harga_tiket());
+        holder.txtDate.setText(list.get(position).getWaktu_mulai() + " - " + list.get(position).getWaktu_selesai());
+        Glide.with(context)
+                .load(list.get(position).getFoto())
+                .placeholder(R.drawable.ic_date)
+                .into(holder.imgCover);
+        holder.layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, BuyActivity.class);
+                context.startActivity(intent);
+            }
+        });
+    }
+
+
+    @Override
+    public int getItemCount() {
+        return list.size();
+    }
+
+    class UsersHolder extends RecyclerView.ViewHolder {
+
+        ImageView imgCover;
+        TextView txtTitle, txtDate, txtTime,txtPrice;
+        LinearLayout layout;
+
+        public UsersHolder(View itemView) {
+            super(itemView);
+            layout = itemView.findViewById(R.id.layout);
+            imgCover = itemView.findViewById(R.id.imgEvent);
+            txtTitle = itemView.findViewById(R.id.txtTitle);
+            txtDate = itemView.findViewById(R.id.txtDate);
+            txtTime = itemView.findViewById(R.id.txtTime);
+            txtPrice = itemView.findViewById(R.id.txtPrice);
+        }
+    }
+}
+

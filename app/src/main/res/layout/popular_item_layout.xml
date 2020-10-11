@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
+    android:id="@+id/layout"
+    android:background="@drawable/bg_list"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/imgEvent"
+        android:src="@drawable/medium"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+    <TextView
+        android:id="@+id/txtTitle"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:text="A Creator Celebration - Tulus x Erwin Gutawa"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:text="Mulai dari"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/txtPrice"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:text="Rp. 50000"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txtDate"
+            android:paddingLeft="10dp"
+            android:text="07 Nov 2020 - 07 Nov 2020"
+            android:drawableStart="@drawable/ic_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/txtTime"
+            android:paddingLeft="10dp"
+            android:text="20:00 - 22:00 WIB"
+            android:layout_marginBottom="10dp"
+            android:drawableStart="@drawable/ic_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
