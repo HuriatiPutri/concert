@@ -44,7 +44,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.UsersHol
         holder.txtTitle.setText(list.get(position).getJudul());
         holder.txtDate.setText(list.get(position).getTanggal());
         holder.txtPrice.setText("Rp. "+list.get(position).getMulai_harga_tiket());
-        holder.txtDate.setText(list.get(position).getWaktu_mulai() + " - " + list.get(position).getWaktu_selesai());
+        holder.txtTime.setText(list.get(position).getWaktu());
         Glide.with(context)
                 .load(list.get(position).getFoto())
                 .placeholder(R.drawable.ic_date)
@@ -53,6 +53,11 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.UsersHol
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, BuyActivity.class);
+                intent.putExtra("img", list.get(position).getFoto());
+                intent.putExtra("title", list.get(position).getJudul());
+                intent.putExtra("desc", list.get(position).getDesk());
+                intent.putExtra("time", list.get(position).getWaktu());
+                intent.putExtra("date", list.get(position).getTanggal());
                 context.startActivity(intent);
             }
         });

@@ -156,12 +156,15 @@
                     android:layout_width="50dp"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:onClick="minus1"
+                        android:clickable="true"
                         android:text="-"
                         android:textSize="15dp"
                         android:textStyle="bold"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content" />
                     <TextView
+                        android:id="@+id/jmlhNormal"
                         android:text="0"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
@@ -169,6 +172,7 @@
                         android:textSize="15dp"
                         android:layout_height="wrap_content" />
                     <TextView
+                        android:onClick="plus1"
                         android:text="+"
                         android:textSize="15dp"
                         android:textStyle="bold"
@@ -216,12 +220,14 @@
                     android:layout_width="50dp"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:onClick="min2"
                         android:text="-"
                         android:textSize="15dp"
                         android:textStyle="bold"
                         android:layout_width="10dp"
                         android:layout_height="wrap_content" />
                     <TextView
+                        android:id="@+id/jmlhNormal2"
                         android:text="0"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
@@ -229,6 +235,7 @@
                         android:textSize="15dp"
                         android:layout_height="wrap_content" />
                     <TextView
+                        android:onClick="plus2"
                         android:text="+"
                         android:textSize="15dp"
                         android:textStyle="bold"
@@ -236,7 +243,80 @@
                         android:layout_height="wrap_content" />
                 </LinearLayout>
             </RelativeLayout>
-        <LinearLayout
+            <TextView
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorDarkGrey"
+                android:text="Marchandise"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <RelativeLayout
+                android:padding="16dp"
+                android:background="@drawable/bg_edt_send"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/ic3"
+                    android:background="@drawable/bg_list"
+                    android:src="@drawable/voucher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txtName3"
+                    android:layout_centerVertical="true"
+                    android:text="T-Shirt"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/ic3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/price3"
+                    android:layout_centerVertical="true"
+                    android:text="Rp. 150.000"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:layout_marginRight="40dp"
+                    android:layout_toLeftOf="@id/lnCount3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:id="@+id/lnCount3"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/bg_edt_send"
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:onClick="minus3"
+                        android:text="-"
+                        android:clickable="true"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/jmlhNormal3"
+                        android:text="0"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="10dp"
+                        android:textSize="15dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:onClick="plus3"
+                        android:clickable="true"
+                        android:text="+"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
             android:layout_marginTop="20dp"
             android:background="@drawable/bg_btn"
             android:orientation="vertical"
@@ -259,6 +339,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
+                    android:id="@+id/totTiket"
                     android:textColor="@color/colorWhite"
                     android:text="Rp. 100.000"
                     android:layout_alignParentRight="true"
@@ -276,8 +357,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
+                    android:id="@+id/totMchns"
                     android:textColor="@color/colorWhite"
-                    android:text="Rp. 50.000"
+                    android:text="Rp. 150.000"
                     android:layout_alignParentRight="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />

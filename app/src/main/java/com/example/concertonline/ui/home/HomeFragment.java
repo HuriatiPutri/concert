@@ -70,7 +70,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if(response.isSuccessful()){
-                    Toast.makeText(getContext(), "berhasil" + response.code(), Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getContext(), "berhasil" + response.code(), Toast.LENGTH_SHORT).show();
                     try {
                         JSONObject jsonObject = new JSONObject(response.body().string());
                         JSONArray jsonArray = jsonObject.getJSONObject("data").getJSONArray("populer");
