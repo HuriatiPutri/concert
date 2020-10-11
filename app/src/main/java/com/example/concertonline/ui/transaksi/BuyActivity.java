@@ -1,5 +1,6 @@
 package com.example.concertonline.ui.transaksi;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -67,6 +68,7 @@ public class BuyActivity extends AppCompatActivity {
     }
 
     public void pembayaran(View view) {
+        startActivity(new Intent(this, PembayaranActivity.class));
     }
 
     public void minus1(View view) {

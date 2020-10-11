@@ -19,7 +19,7 @@ import com.example.concertonline.ui.registrasi.DaftarActivity;
 public class AkunFragment extends Fragment {
 
     private AkunViewModel mViewModel;
-    Boolean isLogiin = false;
+    Boolean isLogiin = true;
     public static AkunFragment newInstance() {
         return new AkunFragment();
     }
