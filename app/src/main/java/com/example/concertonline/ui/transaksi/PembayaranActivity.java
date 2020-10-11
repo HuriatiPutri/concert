@@ -25,18 +25,15 @@ public class PembayaranActivity extends AppCompatActivity {
         txtTitle = findViewById(R.id.txtTitle);
         txtDate = findViewById(R.id.txtDate);
         txtTime = findViewById(R.id.txtTime);
-        txtDesc = findViewById(R.id.txtDesc);
 
         img = getIntent().getStringExtra("img");
         title = getIntent().getStringExtra("title");
-        desc = getIntent().getStringExtra("desc");
         time = getIntent().getStringExtra("time");
         date = getIntent().getStringExtra("date");
 
         txtTitle.setText(title);
         txtDate.setText(date);
         txtTime.setText(time);
-        txtDesc.setText(desc);
 
         Glide.with(this)
                 .load(img)
