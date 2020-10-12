@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.concertonline.R;
 
+import com.example.concertonline.R;
+
 public class PembayaranActivity extends AppCompatActivity {
 
     ImageView imgEvent;

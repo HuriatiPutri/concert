@@ -12,7 +12,11 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.transaksi.KonfirmasiActivity"></activity>
+        <activity android:name=".ui.detail_watch.DetailVrActivity" android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".ui.detail_watch.DetailReplayActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".ui.transaksi.KonfirmasiActivity" />
         <activity android:name=".ui.detail.DetailEventActivity" />
         <activity android:name=".ui.transaksi.PembayaranActivity" />
         <activity android:name=".ui.registrasi.FollowActivity" />

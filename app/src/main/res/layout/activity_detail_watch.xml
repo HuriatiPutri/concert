@@ -9,13 +9,38 @@
     tools:context=".ui.detail_watch.DetailWatchActivity">
 
     <VideoView
-        android:id="@+id/videoView"
+        android:id="@+id/myVideo"
         android:layout_width="match_parent"
         android:layout_height="250dp"/>
 
+    <TextView
+        android:id="@+id/btnClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="X"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/btnVR"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textStyle="bold"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/colorWhite"
+        android:text="Mode VR"
+        android:background="@drawable/bg_gray"
+        android:gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <RelativeLayout
         android:id="@+id/rv_t"
-        android:layout_below="@id/videoView"
+        android:layout_below="@id/myVideo"
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -70,8 +95,9 @@
             android:padding="10dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:src="@drawable/ic_send"
+            app:srcCompat="@drawable/ic_send"
             android:layout_width="50dp"
+            android:layout_marginRight="20dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
 </RelativeLayout>
